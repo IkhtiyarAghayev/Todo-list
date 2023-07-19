@@ -38,6 +38,16 @@
     text-align: left;
     font-size: 1.6em;
     color: #474E68;
+    position: relative;
+}
+
+.todo-app h1::before {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.473);
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 30px;
 }
 
 .row {
@@ -129,10 +139,22 @@ ul li.checked::before {
 }
 
 .completedTask-container h1 {
+    display: flex;
     text-align: left;
     font-size: 1.6em;
     margin-bottom: 50px;
     color: #474E68;
+    position: relative;
+    justify-content: left;
+}
+
+.completedTask-container h1::before {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.473);
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
 }
 
 .completedTask-container button {
@@ -145,11 +167,42 @@ ul li.checked::before {
     border-radius: 30px;
     cursor: pointer;
     position: absolute;
-    top: 29px;
+    top: 10px;
     right: 25px;
 
 }
 
 .disabled {
     display: none;
+}
+
+@media screen and (max-width:440px) {
+    .completedTask-container {
+        padding: 10px 30px 70px;
+    }
+
+    .todo-app h1 {
+        margin-top: 60px;
+    }
+
+    .row input {
+        font-size: 1em;
+    }
+
+    .row button {
+        position: absolute;
+        top: 282px;
+        right: 40px;
+    }
+
+    .completedTask-container h1 {
+        text-align: center;
+        padding-right: 200px;
+    }
+
+
+    .completedTask-container button {
+        top: 10px;
+    }
+
 }
